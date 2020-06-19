@@ -1,0 +1,5 @@
+<?php 
+
+$localhost = "localhost/phpprocedural";
+
+?>
