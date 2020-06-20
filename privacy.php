@@ -1,5 +1,5 @@
 <?php 
-include "templates/header.php"
+include "templates/htmlheader.php"
 ?>
 
 <div class="col-md-8 offset-md-2">

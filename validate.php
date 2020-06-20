@@ -1,7 +1,7 @@
 <?php 
 
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
 
 if(!isset($_GET['hash'])){
     echo "Sorry, you are trying to access this page with incomplete parameters.";

@@ -2,12 +2,10 @@
 
 session_start();
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
+include "functions/systemfunctions.php";
+checksignin();
 
-if(!isset($_SESSION['signin_success'])){
-    echo "This page is only available to signed in users.";
-    return;
-}
 $userid = $_SESSION['id'];
 
 $getprofile = "select * from user where id = $userid";

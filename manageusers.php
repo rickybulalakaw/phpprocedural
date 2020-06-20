@@ -1,7 +1,9 @@
 <?php 
-
+session_start();
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
+include "functions/systemfunctions.php";
+checksignin();
 ?>
 
 <?php 

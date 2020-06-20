@@ -1,8 +1,9 @@
 <?php 
 
 include "config/db.php";
-
 include "functions/userfunctions.php";
+include "functions/systemfunctions.php";
+
 
 $id = $_GET['id'];
 // checksignin
@@ -19,6 +20,8 @@ $id = $_GET['id'];
 //     echo "This page can only be accessed by System Administrators.";
 //     return;
 // }
+
+checksignin();
 
 activateuser($id);
 

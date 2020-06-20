@@ -3,22 +3,28 @@
 function getpostownername($postid){
     include "../phpprocedural/config/db.php"; 
 
-    $getpostownername = "select * from user where id = $postid";
+    if($postid != null){
 
-    $postonwernamedata = mysqli_query($db, $getpostownername);
+        $getpostownername = "select * from user where id = $postid";
 
-    $data = mysqli_fetch_assoc($postonwernamedata);
+        $postonwernamedata = mysqli_query($db, $getpostownername);
 
-    $postowner['firstname'] = $data['firstname'];
-    $postowner['lastname'] = $data['lastname'];
+        $data = mysqli_fetch_assoc($postonwernamedata);
 
-    return $postowner;
+        $postowner['firstname'] = $data['firstname'];
+        $postowner['lastname'] = $data['lastname'];
+
+        return $postowner;
+    } else {
+        return;
+    }
+    
 
 }
 
 function getpost($postid){
 
-    include_once "../phpprocedural/config/db.php"; 
+    include "../phpprocedural/config/db.php"; 
 
     $getpost = "select * from post where id = $postid";
     $process1 = mysqli_query($db, $getpost);
@@ -31,9 +37,18 @@ function getpost($postid){
 
 
 
-function getposts($by){
+function getpostsby($parameter, $parametervalue){
+
+    include_once "../phpprocedural/config/db.php";
+
+    $query = "select * from post where $parameter = '$parametervalue'";
+    $process = mysqli_query($db, $query);
+
+    return $process;
 
 }
+
+
 
 
 

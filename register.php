@@ -1,6 +1,6 @@
 <?php 
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
 include "config/env.php";
 // include "mailer.php";
 

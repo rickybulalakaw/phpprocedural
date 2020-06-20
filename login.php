@@ -1,12 +1,12 @@
 <?php 
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
 session_start();    
 
 if(isset($_POST['login'])){
 
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
+    $email =  $_POST['email'];
+    $password =  $_POST['password'];
 
     $sql = "select * from user where email = ? and status = 'Active'";
 

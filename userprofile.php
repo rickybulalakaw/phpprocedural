@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include "config/db.php";
-include "templates/header.php";
+include "templates/htmlheader.php";
 
 if(!isset($_GET['id']))
 {
