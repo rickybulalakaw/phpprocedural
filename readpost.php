@@ -37,6 +37,7 @@ $commentdata = getcomments($postid);
                     if($_SESSION['id'] == $postdata['post']['userid']) {?>
                 <div class="row">
                         <a class="btn btn-primary" href="editpost.php?id=<?= $postdata['post']['id']?>">Edit post</a>
+                        <!-- <a class="btn btn-danger" href="commentpost.php?id=<?= $postdata['post']['id'] ?>">Submit comment</a> -->
                 
                 </div>
 

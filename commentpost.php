@@ -36,15 +36,14 @@ if(isset($_POST['submit'])){
 ?>
 
 <div class="col-md-8 offset-md-2">
-<p> </p>
-<h2 class="text-light">You are commenting on the post entitled <?= $post_title ?></h2>
+<h3 class="text-dark">You are commenting on the post entitled <?= $post_title ?></h3>
 
 <form action="commentpost.php?id=<?= $postid ?>" method="post">
 <input type="number" name="userid" value="<?=$userid?>" hidden>
 <input type="number" name="postid" value="<?=$postid?>" hidden>
 <textarea name="comment" id="editor1" cols="30" rows="10"></textarea>
 <br>
-<input type="submit" name="submit" value="Submit" class="btn btn-light">
+<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 
 </form>
 </div>

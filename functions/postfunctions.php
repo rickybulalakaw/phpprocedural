@@ -35,11 +35,19 @@ function getpost($postid){
     return $postdata; // this allows the data processed here to be used in the page where this function is called.
 }
 
-function getpostsby($parameter, $parametervalue){
+function getpostsby($parameter, $parametervalue, $start_from, $results_per_page){
 
     include_once "../phpprocedural/config/db.php";
 
-    $query = "select * from post where $parameter = '$parametervalue' order by timestamp desc";
+    if($parameter == "content"){
+        $query = "select * from post where $parameter LIKE '%$parametervalue%' order by timestamp desc limit $start_from, $results_per_page";
+
+    } else {
+        $query = "select * from post where $parameter = '$parametervalue' order by timestamp desc";
+
+    }
+
+    
     $process = mysqli_query($db, $query);
 
     return $process;

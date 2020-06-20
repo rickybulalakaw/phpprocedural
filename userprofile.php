@@ -35,7 +35,7 @@ $count = mysqli_fetch_assoc($process);
     Extension: <?= $user['extension'] ?><br>
     Email: <?= $user['email'] ?><br>
     Date of Birth: <?= $user['dateofbirth'] ?><br>
-    Number of posts: <?= $count['id'] ?><br>
+    Number of posts: <?= $count['id'] ?> <a href="searchposts.php?param=userid&id=<?= $id?>">View posts</a><br>
 
     </div>
     <div class="col-md-2">
@@ -48,6 +48,8 @@ $count = mysqli_fetch_assoc($process);
         <?php }?>
     </div>
 </div>
+
+
 
 <?php
 include "templates/footer.php";
