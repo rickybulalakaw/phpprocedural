@@ -1,5 +1,5 @@
 <?php 
 
-$localhost = "localhost/phpprocedural";
+$localhost = "/localhost/phpprocedural/";
 
 ?>

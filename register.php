@@ -2,6 +2,7 @@
 include "config/db.php";
 include "templates/header.php";
 include "config/env.php";
+// include "mailer.php";
 
 if(isset($_POST['submit'])){
 
@@ -59,33 +60,38 @@ if(isset($_POST['submit'])){
         $to = $email;
         $subject = "Email Validation Link";
 
-        $message = "
-        <html>
-        <head>
-        <title>HTML email</title>
-        </head>
-        <body>
-        <p>This email contains HTML Tags!</p>
-        Hello New user. Please click this link to validate your ownership of your email address: <br><br>
-        $localhost/validate.php?hash=$validationlink <br>
-        Thank you. <br><br>
-        System Developers
-        </body>
-        </html>
-        ";
+        // $message = "
+        // <html>
+        // <head>
+        // <title>HTML email</title>
+        // </head>
+        // <body>
+        // <p>This email contains HTML Tags!</p>
+        // Hello New user. Please click this link to validate your ownership of your email address: <br><br>
+        // $localhost/validate.php?hash=$validationlink <br>
+        // Thank you. <br><br>
+        // System Developers
+        // </body>
+        // </html>
+        // ";
+
+        $message = "Please click this link: $localhost/validate.php?hash=$validationlink ";
 
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
         // More headers
-        $headers .= 'From: <webmaster@example.com>' . "\r\n";
+        $headers .= 'From: bayambangsystems@gmail.com' . "\r\n";
         // $headers .= 'Cc: myboss@example.com' . "\r\n";
 
-        mail($to,$subject,$message,$headers);
+        if(mail($to,$subject,$message,$headers)){ // in order for this to work, you need to make some editions to your local XAMPP settings. 
+            header("Location: registrationsuccess.php");
+        } else {
+            echo "Error";
+        }
 
-
-        header("Location: registrationsuccess.php");
+   
 
         // $result = mysqli_stmt_get_result($stmt);
         // if(mysqli_num_rows($result) >= 1){

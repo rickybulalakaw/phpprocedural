@@ -1,0 +1,40 @@
+<?php 
+
+function getpostownername($postid){
+    include "../phpprocedural/config/db.php"; 
+
+    $getpostownername = "select * from user where id = $postid";
+
+    $postonwernamedata = mysqli_query($db, $getpostownername);
+
+    $data = mysqli_fetch_assoc($postonwernamedata);
+
+    $postowner['firstname'] = $data['firstname'];
+    $postowner['lastname'] = $data['lastname'];
+
+    return $postowner;
+
+}
+
+function getpost($postid){
+
+    include_once "../phpprocedural/config/db.php"; 
+
+    $getpost = "select * from post where id = $postid";
+    $process1 = mysqli_query($db, $getpost);
+    $postdata['post'] = mysqli_fetch_assoc($process1);
+
+    $postdata['postowner'] = getpostownername($postdata['post']['userid']);
+
+    return $postdata; // this allows the data processed here to be used in the page where this function is called.
+}
+
+
+
+function getposts($by){
+
+}
+
+
+
+?>

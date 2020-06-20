@@ -4,7 +4,7 @@
 
 function activateuser ($id){
 
-    include "../phpprocedural/config/db.php"; 
+    include_once "../phpprocedural/config/db.php"; 
 
     // This function changes the status of the user from Validated to Active
 
