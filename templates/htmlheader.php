@@ -62,7 +62,8 @@ include "./config/env.php";
       <?php } ?> <!-- Closes the else bracket -->
     </ul> 
     <form class="form-inline my-2 my-lg-0" method="get" action="searchposts.php">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search posts content" name="search" aria-label="Search">
+      <input name="param" value = "post" hidden>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search posts content" name="id" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

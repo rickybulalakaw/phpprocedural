@@ -24,10 +24,25 @@ $start_from = ($page-1)*$results_per_page;
 
 <?php } ?>
 
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Latest Posts</h1>        
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
 <div class="col-md-6 offset-md-2">
     <div class="row">
         <div class="col">
-            <h1 class="text-center">Latest Posts</h1>
+            
         </div>
     </div>
 
@@ -111,10 +126,10 @@ $start_from = ($page-1)*$results_per_page;
 <div class="col-8 col-md-2">
 <h2>Available Tags</h2>
 <?php foreach($tags as $tag) {?>
-<?= $tag['tag']?><br>
+<a href="searchposts.php?param=tag&id=<?= $tag['id'] ?>"><?= $tag['tag']?></a><br>
     <?php } ?>
 
-
+</div>
 </div>
 
 <?php include "templates/footer.php"; ?>

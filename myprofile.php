@@ -15,23 +15,24 @@ $user = mysqli_fetch_assoc($result);
 
 ?>
 <div class="row">
-    <div class="col">
+    <div class="col-md-6 offset-md-2">
         <h1>My Profile</h1>
+        <hr>
 
     </div>
     
 </div>
 <div class="row">
-    <div class="col-md-8">
-    Last Name: <?= $user['lastname'] ?> <br>
-    First Name: <?= $user['firstname'] ?><br>
-    Middle Name: <?= $user['middlename'] ?><br>
-    Extension: <?= $user['extension'] ?><br>
-    Email: <?= $user['email'] ?><br>
-    Date of Birth: <?= $user['dateofbirth'] ?><br>
+    <div class="col-md-6 offset-md-2">
+        Last Name: <?= $user['lastname'] ?> <br>
+        First Name: <?= $user['firstname'] ?><br>
+        Middle Name: <?= $user['middlename'] ?><br>
+        Extension: <?= $user['extension'] ?><br>
+        Email: <?= $user['email'] ?><br>
+        Date of Birth: <?= $user['dateofbirth'] ?><br>
 
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
         <?php if($user['imageid'] == "") { ?>
             <form action="uploadprofilepic.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" class="form-control">

@@ -26,7 +26,7 @@ $commentdata = getcomments($postid);
         <div class="row bg-light">
             <div class="col">
                 <div class="row">
-                    <small>Posted by: <?= $postdata['postowner']['firstname']. " " . $postdata['postowner']['lastname'] ?></small>
+                    <small>Posted by: <a href="userprofile.php?id=<?= $postdata['post']['userid'] ?>"><?= $postdata['postowner']['firstname']. " " . $postdata['postowner']['lastname'] ?></a></small>
                 </div>
                 <div class="row">
                     <div class="col">
