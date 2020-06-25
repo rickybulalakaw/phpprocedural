@@ -41,7 +41,7 @@ $start_from = ($page-1)*$results_per_page;
 
 $postsearch = getpostsby($param, $searchid, $start_from, $results_per_page);
 
-print_r($postsearch);
+// print_r($postsearch);
 
 if(mysqli_num_rows($postsearch) < 1){
     
