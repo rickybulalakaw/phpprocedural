@@ -2,9 +2,13 @@
 
 session_start();
 
+
+
 include "templates/htmlheader.php";
 include "functions/postfunctions.php";
 include "functions/commentfunctions.php";
+
+
 
 if(!isset($_GET['id'])){
     echo "You are accessing this page with incomplete parameters.";
@@ -15,8 +19,10 @@ $postid = $_GET['id'];
 
 if(!isset($_SESSION['signin_success'])){
     echo "You need to be signed in to comment to a post. Click <a href='login.php'>here</a> to log in.";
+    return;
 
 }
+
 
 $userid = $_SESSION['id'];
 
