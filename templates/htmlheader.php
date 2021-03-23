@@ -64,11 +64,11 @@ include "./config/env.php";
       </li>
       <?php } ?> <!-- Closes the else bracket -->
     </ul> 
-    <form class="form-inline my-2 my-lg-0" method="get" action="searchposts.php">
+    <!-- <form class="form-inline my-2 my-lg-0" method="get" action="searchposts.php">
       <input name="param" value = "content" hidden>
       <input class="form-control mr-sm-2" type="search" placeholder="Search posts content" name="id" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 <div class="container-fluid">

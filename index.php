@@ -86,7 +86,7 @@ $start_from = ($page-1)*$results_per_page;
         <?php } // closes check if post owner is same as current owner
 
             if($post['userid'] != $signinid){ ?>
-            <a href="commentonpost.php?postid=<?= $post['id']?>">Comment</a>
+             <a href="commentpost.php?postid=<?= $post['id']?>">Comment</a>
 
             <?php } // closes the check if user is owner ?>
         <?php } // closes check if viewer is signed in

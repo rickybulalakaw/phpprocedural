@@ -16,7 +16,7 @@ $result = mysqli_query($db, $getprofile);
 $user = mysqli_fetch_assoc($result);
 
 $getposts = "select count(id) from post where userid = $id";
-$process = mysqli_query($db, $getprofile);
+$process = mysqli_query($db, $getposts);
 $count = mysqli_fetch_assoc($process);
 
 ?>
@@ -35,7 +35,7 @@ $count = mysqli_fetch_assoc($process);
     Extension: <?= $user['extension'] ?><br>
     Email: <?= $user['email'] ?><br>
     Date of Birth: <?= $user['dateofbirth'] ?><br>
-    Number of posts: <?= $count['id'] ?> <a href="searchposts.php?param=userid&id=<?= $id?>">View posts</a><br>
+    Number of posts: <?= $count['count(id)'] ?> <a href="searchposts.php?param=userid&id=<?= $id?>">View posts</a><br>
 
     </div>
     <div class="col-md-2">
